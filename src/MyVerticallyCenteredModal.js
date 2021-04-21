@@ -1,4 +1,4 @@
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Col, Container, Form, Media, Modal } from 'react-bootstrap';
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -9,22 +9,45 @@ function MyVerticallyCenteredModal(props) {
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title id='contained-modal-title-vcenter'>
-                    Modal heading
-                </Modal.Title>
+                <Modal.Title id='contained-modal-title-vcenter'>Nokia Dinner</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>Centered Modal</h4>
-                <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
-                </p>
+                <Form className='my-3'>
+                    <Container>
+                        <Form.Row>
+                            <Form.Group as={Col}>
+                                <Form.Label>First Name</Form.Label>
+                                <Form.Control placeholder='Ron' />
+                            </Form.Group>
+
+                            <Form.Group as={Col}>
+                                <Form.Label>Last Name</Form.Label>
+                                <Form.Control as='input' placeholder='Fybish' />
+                            </Form.Group>
+                        </Form.Row>
+                        <Form.Group>
+                            <Form.Label>Comments</Form.Label>
+                            <Form.Control
+                                as='textarea'
+                                placeholder='no cheese, no egges'
+                                rows={3}
+                            />
+                        </Form.Group>
+                        <Form.Group >
+                            <Media className='text-right pt-3' as='li'>
+                                <img width={150} height={150} src={props.dish?.image} />
+                                <Media.Body>
+                                    <h5>{props.dish?.name}</h5>
+                                    <p>{props.dish?.description}</p>
+                                </Media.Body>
+                            </Media>
+                        </Form.Group>
+                        <Button variant='primary' block>
+                            שלח הזמנה
+                        </Button>
+                    </Container>
+                </Form>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant='primary'>Save changes</Button>
-                <Button variant="secondary" onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
         </Modal>
     );
 }

@@ -1,17 +1,11 @@
 import React, { useState } from 'react';
 import { arrcaffeData } from './arcaffeData';
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
-import {
-    Card,
-    Button,
-    Media,
-    Container,
-    Row,
-    Col,
-} from 'react-bootstrap';
+import { Card, Button, Media, Container, Row, Col } from 'react-bootstrap';
 
 const Menu = () => {
     const [modalShow, setModalShow] = useState(false);
+    const [dish, setdish] = useState(null);
 
     return (
         <>
@@ -20,7 +14,7 @@ const Menu = () => {
                     <Row>
                         <Col>
                             {arrcaffeData.map(dish => (
-                                <Card border="primary" className='my-3 text-right'>
+                                <Card border='primary' className='my-3 text-right'>
                                     <Card.Body>
                                         <Media as='li'>
                                             <img
@@ -38,7 +32,10 @@ const Menu = () => {
                                                 <p>{dish.description}</p>
                                                 <Button
                                                     variant='primary'
-                                                    onClick={() => setModalShow(true)}
+                                                    onClick={() => {
+                                                        setdish(dish);
+                                                        setModalShow(true);
+                                                    }}
                                                 >
                                                     הזמנת מנה
                                                 </Button>
@@ -54,6 +51,7 @@ const Menu = () => {
             <MyVerticallyCenteredModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                dish={dish}
             />
         </>
     );
