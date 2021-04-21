@@ -1,11 +1,13 @@
-import React from 'react'
-
+import React from 'react';
+import Hero from './Hero';
+import Menu from './Menu';
 const App = () => {
-  return (
-    <div>
-     <h1>Nokia</h1> 
-    </div>
-  )
-}
+    return (
+        <>
+            <Hero />
+            <Menu />
+        </>
+    );
+};
 
-export default App
+export default App;
