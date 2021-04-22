@@ -33,7 +33,7 @@ function MyVerticallyCenteredModal(props) {
                                 rows={3}
                             />
                         </Form.Group>
-                        <Form.Group >
+                        <Form.Group>
                             <Media className='text-right pt-3' as='li'>
                                 <img width={150} height={150} src={props.dish?.image} />
                                 <Media.Body>

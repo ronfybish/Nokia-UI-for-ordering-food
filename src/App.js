@@ -1,6 +1,6 @@
 import React from 'react';
 import Hero from './Hero';
-import Menu from './Menu';
+import Menu from './components/Menu';
 const App = () => {
     return (
         <>

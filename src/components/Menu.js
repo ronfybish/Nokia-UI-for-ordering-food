@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { arrcaffeData } from './arcaffeData';
+import { arrcaffeData } from '../arcaffeData';
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
 import { Card, Button, Media, Container, Row, Col } from 'react-bootstrap';
 
