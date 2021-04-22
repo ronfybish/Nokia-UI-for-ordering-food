@@ -1,6 +1,6 @@
 import { Button, Col, Container, Form, Media, Modal } from 'react-bootstrap';
 
-function MyVerticallyCenteredModal(props) {
+const OrderModal = props => {
     return (
         <Modal
             {...props}
@@ -50,6 +50,6 @@ function MyVerticallyCenteredModal(props) {
             </Modal.Body>
         </Modal>
     );
-}
+};
 
-export default MyVerticallyCenteredModal;
+export default OrderModal;

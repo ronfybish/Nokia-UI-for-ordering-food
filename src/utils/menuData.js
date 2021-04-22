@@ -1,4 +1,4 @@
-export const arrcaffeData = [
+export const menuData = [
     {
         name: 'סלט ים תיכוני',
         image:

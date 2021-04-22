@@ -3,7 +3,7 @@ import { Container, Jumbotron } from 'react-bootstrap';
 
 const Hero = () => {
     return (
-        <Jumbotron fluid bsPrefix='bg-primary p-5'>
+        <Jumbotron fluid bsPrefix='p-5' className='text-center'>
             <Container>
                 <h1>Nokia Dinner</h1>
                 <p>
