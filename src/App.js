@@ -7,12 +7,11 @@ import bg from './images/test.jpg';
 const App = () => {
     return (
         <>
-            <NavBar />
             <section
                 style={{
                     position: 'relative',
                     background: `url(${bg}) no-repeat center center/cover`,
-                    height: '180vh',
+                    height: '244vh',
                 }}
             >
                 <div
@@ -22,28 +21,15 @@ const App = () => {
                         top: '0',
                         left: '0',
                         width: '100%',
-                        height: '100%',
+                        height: 'auto',
                     }}
                 >
-                    {/* <div
-                        style={{
-                            color: '#fff',
-                            height: '100%',
-                            width: '80%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            margin: 'auto',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            textAlign: 'center',
-                        }}
-                    > */}
+                    <NavBar />
                     <Hero />
                     <CardList />
-                    {/* </div> */}
+                    <Footer />
                 </div>
             </section>
-            <Footer />
         </>
     );
 };
