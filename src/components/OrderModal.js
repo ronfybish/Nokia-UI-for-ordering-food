@@ -43,8 +43,13 @@ const OrderModal = props => {
             console.log(data);
         } catch (error) {
             setOrderStatus('error');
-            setErr(error);
-            console.log(error);
+
+            const errorMessage =
+                error.response && error.response.data.message
+                    ? error.response.data.message
+                    : error.message;
+            setErr(errorMessage);
+            console.log(errorMessage);
         }
     };
     return (
@@ -77,7 +82,13 @@ const OrderModal = props => {
                             </p>
                             <hr />
                             <div className='d-flex justify-content-end'>
-                                <Button onClick={props.onHide} variant='outline-success'>
+                                <Button
+                                    onClick={() => {
+                                        setOrderStatus('idle');
+                                        props.onHide();
+                                    }}
+                                    variant='outline-success'
+                                >
                                     Close me y'all!
                                 </Button>
                             </div>
@@ -88,7 +99,7 @@ const OrderModal = props => {
                         <Container>
                             {orderStatus === 'error' && (
                                 <Alert variant='danger'>
-                                    <Alert.Heading>Oh snap! </Alert.Heading>
+                                    <Alert.Heading>Oh snap! {err} </Alert.Heading>
                                     <p>
                                         Change this and that and try again. Duis mollis,
                                         est non commodo luctus, nisi erat porttitor
