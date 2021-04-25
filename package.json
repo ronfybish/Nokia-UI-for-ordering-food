@@ -37,5 +37,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://rct0re5p3d.execute-api.eu-central-1.amazonaws.com"
+  
 }

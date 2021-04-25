@@ -10,7 +10,7 @@ const CardList = () => {
                 <Row>
                     <Col>
                         {menuData.map(dish => (
-                            <CardFood dishData={dish} />
+                            <CardFood key={dish.name} dishData={dish} />
                         ))}
                     </Col>
                 </Row>

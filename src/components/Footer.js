@@ -3,7 +3,7 @@ import { Container, Navbar } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <Navbar style={{ background: '#8E8E81',color:'white' }}>
+        <Navbar variant='dark'>
             <Container>Made With Love</Container>
         </Navbar>
     );
