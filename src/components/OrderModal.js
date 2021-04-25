@@ -29,10 +29,10 @@ const OrderModal = props => {
             first_name: firstName,
             last_name: lastName,
             restaurant: 'Arcafe',
-            menu_dish: props.dish.name,
+            menu_dish: props.dish?.name,
             comment: comment,
         };
-     
+
         try {
             const { data } = await axios.post(
                 '/demo/NokiaS3JsonParsing',
@@ -61,20 +61,28 @@ const OrderModal = props => {
                 {orderStatus === 'loading' ? (
                     <Spinner animation='border' />
                 ) : orderStatus === 'success' ? (
-                    <Alert variant='success'>
-                        <Alert.Heading>Hey, nice to see you</Alert.Heading>
-                        <p>
-                            Aww yeah, you successfully read this important alert message.
-                            This example text is going to run a bit longer so that you can
-                            see how spacing within an alert works with this kind of
-                            content.
-                        </p>
-                        <hr />
-                        <p className='mb-0'>
-                            Whenever you need to, be sure to use margin utilities to keep
-                            things nice and tidy.
-                        </p>
-                    </Alert>
+                    <Container>
+                        <Alert variant='success'>
+                            <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                            <p>
+                                Aww yeah, you successfully read this important alert
+                                message. This example text is going to run a bit longer so
+                                that you can see how spacing within an alert works with
+                                this kind of content.
+                            </p>
+                            <hr />
+                            <p className='mb-0'>
+                                Whenever you need to, be sure to use margin utilities to
+                                keep things nice and tidy.
+                            </p>
+                            <hr />
+                            <div className='d-flex justify-content-end'>
+                                <Button onClick={props.onHide} variant='outline-success'>
+                                    Close me y'all!
+                                </Button>
+                            </div>
+                        </Alert>
+                    </Container>
                 ) : (
                     <Form className='my-3' onSubmit={onSubmit}>
                         <Container>
